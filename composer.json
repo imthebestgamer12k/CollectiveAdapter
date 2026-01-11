@@ -1,0 +1,21 @@
+{
+    "name": "niel/collective-adapter",
+    "description": "A compatibility solution for migrating old Laravel collective to new Laravel version",
+    "type": "library",
+    "require": {
+        "php": "^7.2 || ^8.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Niel\\CollectiveAdapter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Niel Sibay"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
