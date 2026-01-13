@@ -48,6 +48,12 @@ class FormService
         }
         $methodAttr = 'method="' . $method . '"';
 
+        // Handle 'files' => true for multipart/form-data
+        if (isset($attributes['files']) && $attributes['files']) {
+            $attributes['enctype'] = 'multipart/form-data';
+            unset($attributes['files']);
+        }
+
         // Remove 'route' and 'method' from attributes since we've already handled them
         unset($attributes['route'], $attributes['method'], $attributes['url']);
 
@@ -124,6 +130,60 @@ class FormService
         $attributesString = $this->parseAttributes($attributes);
         $checkedAttr = $checked ? ' checked' : '';
         return "<input type=\"radio\" name=\"$name\" value=\"$value\"$checkedAttr $attributesString />";
+    }
+
+    public function file($name, array $attributes = [])
+    {
+        $attributesString = $this->parseAttributes($attributes);
+        return "<input type=\"file\" name=\"$name\" $attributesString />";
+    }
+
+    public function picture($name, array $attributes = [])
+    {
+        return $this->file($name, $attributes);
+    }
+
+    public function submit($value = null, array $attributes = [])
+    {
+        $attributesString = $this->parseAttributes($attributes);
+        return "<input type=\"submit\" value=\"" . e($value) . "\" $attributesString />";
+    }
+
+    public function reset($value = null, array $attributes = [])
+    {
+        $attributesString = $this->parseAttributes($attributes);
+        return "<input type=\"reset\" value=\"" . e($value) . "\" $attributesString />";
+    }
+
+    public function button($value = null, array $attributes = [])
+    {
+        $attributesString = $this->parseAttributes($attributes);
+        return "<button type=\"button\" $attributesString>" . e($value) . "</button>";
+    }
+
+    public function tel($name, $value = null, array $attributes = [])
+    {
+        return $this->input('tel', $name, $value, $attributes);
+    }
+
+    public function url($name, $value = null, array $attributes = [])
+    {
+        return $this->input('url', $name, $value, $attributes);
+    }
+
+    public function search($name, $value = null, array $attributes = [])
+    {
+        return $this->input('search', $name, $value, $attributes);
+    }
+
+    public function color($name, $value = null, array $attributes = [])
+    {
+        return $this->input('color', $name, $value, $attributes);
+    }
+
+    public function time($name, $value = null, array $attributes = [])
+    {
+        return $this->input('time', $name, $value, $attributes);
     }
 
     // Generate a label tag

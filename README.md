@@ -4,6 +4,7 @@
 \## A compatibility solution for migrating old Laravel collective to new Laravel version
 
 BRIEF DECRIPTION OF THE PROJECT:
+
 This project was mainly created for Laravel artisans who are looking for solutions/alternative on re-using Laravel Collective in Laravel blades. 
 
 
@@ -31,10 +32,10 @@ HOW TO USE THE PACKAGE:
 
 \## Technologies Used
 
-\- Git
-\- Composer
-\- Php 7.2.* (For Laravel v 7+
-\- PHP 8.1.* (For Laravel v 9+ & above)
+- Git
+- Composer
+- Php 7.2.* (For Laravel v 7+
+- PHP 8.1.* (For Laravel v 9+ & above)
 
 
 
