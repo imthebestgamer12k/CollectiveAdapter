@@ -20,7 +20,7 @@ STEPS TO INSTALL THIS PRJECT:
 
 HOW TO USE THE PACKAGE:
 1. To use this package, go to your App/Providers directory. Edit the AppServiceProvider
-2. Under your namespace add "use Niel\CollectiveAdapter\Services;"
+2. Under your namespace add "use Niel\CollectiveAdapter\Services\FormService;"
 3. Bind FormService to the global 'form' facade helper and put this code inside the register() function:
    
         $this->app->bind('form', function ($app) {
