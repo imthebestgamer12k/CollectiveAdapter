@@ -1,5 +1,5 @@
 {
-    "name": "niel/collective-adapter",
+    "name": "imthebestgamer12k/collective-adapter",
     "description": "A compatibility solution for migrating old Laravel collective to new Laravel version",
     "type": "library",
     "require": {
