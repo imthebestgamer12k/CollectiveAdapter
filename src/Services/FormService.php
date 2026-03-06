@@ -118,18 +118,18 @@ class FormService
         return "<input type=\"hidden\" name=\"$name\" value=\"" . e($value) . "\" $attributesString />";
     }
 
-    public function checkbox($name, $value = 1, $checked = false, array $attributes = [])
+    public function checkbox($name, $value, $checked = false, array $attributes = [])
     {
         $attributesString = $this->parseAttributes($attributes);
         $checkedAttr = $checked ? ' checked' : '';
-        return "<input type=\"checkbox\" name=\"$name\" value=\"$value\"$checkedAttr $attributesString />";
+        return "<input type=\"checkbox\" name=\"$name\" value=\"$value\" $checkedAttr $attributesString />";
     }
 
     public function radio($name, $value, $checked = false, array $attributes = [])
     {
         $attributesString = $this->parseAttributes($attributes);
         $checkedAttr = $checked ? ' checked' : '';
-        return "<input type=\"radio\" name=\"$name\" value=\"$value\"$checkedAttr $attributesString />";
+        return "<input type=\"radio\" name=\"$name\" value=\"$value\" $checkedAttr $attributesString />";
     }
 
     public function file($name, array $attributes = [])
